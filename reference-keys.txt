@@ -1,3 +1,5 @@
+about-me
+resume
 project-introduction
 introductie
 about-the-project
@@ -17,11 +19,6 @@ opdracht-l-m-en-n
 n
 o
 p
-resume
-resume-bas-van-der-burg
-opleiding
-ervaring
-overig
 future-plans
 wat-wil-ik
 wat-heb-ik-hiervoor-nodig
