@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10 Working with parameters | _main.knit</title>
+  <title>11 References | _main.knit</title>
   <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10 Working with parameters | _main.knit" />
+  <meta property="og:title" content="11 References | _main.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 Working with parameters | _main.knit" />
+  <meta name="twitter:title" content="11 References | _main.knit" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="package-creation.html"/>
-<link rel="next" href="references.html"/>
+<link rel="prev" href="working-with-parameters.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -213,66 +213,31 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="working-with-parameters" class="section level1 hasAnchor" number="10">
-<h1><span class="header-section-number">10</span> Working with parameters<a href="working-with-parameters.html#working-with-parameters" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>One of the things that I have learned is to work with parameters in markdown files.
-With the help of parameters its easy to change what you are analysing.
-The goal of parameters is to make it readable for people but also readable for the program.</p>
-<p>For the purpose of showing my skills with markdown parameters I made an analysis based on covid-19 data.
-With this markdown file it is possible to change parameters.
-The parameters that are possible to change are:</p>
-<ul>
-<li><p>Country from which you want to see the data</p></li>
-<li><p>year in which you want to look</p></li>
-<li><p>firstmonth and lastmonth, so you can look at data between specific months</p></li>
-<li><p>continent from which you want to look at</p></li>
-</ul>
-<p>In the video beneath you can look at the easy way to change parameters</p>
-<div class="figure">
-<img src="https://media.giphy.com/media/uWRibtnGNJJ0ST4HjC/giphy.gif" alt="" />
-<p class="caption">Working with parameters</p>
+<div id="references" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">11</span> References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+Cupido, Alexander. n.d. <span>“Detecting <span>Cerebellar Phenotypes</span> with the <span>Erasmus Ladder</span>,”</span> 98.
 </div>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="working-with-parameters.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb85-2"><a href="working-with-parameters.html#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb85-3"><a href="working-with-parameters.html#cb85-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="working-with-parameters.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loading the data to an object</span></span>
-<span id="cb86-2"><a href="working-with-parameters.html#cb86-2" aria-hidden="true" tabindex="-1"></a>covid_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;covid_data.csv&quot;</span>))</span></code></pre></div>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="working-with-parameters.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># change the date collumn to a date class</span></span>
-<span id="cb87-2"><a href="working-with-parameters.html#cb87-2" aria-hidden="true" tabindex="-1"></a>covid_data<span class="sc">$</span>dateRep <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(covid_data<span class="sc">$</span>dateRep, <span class="at">tryFormats =</span> <span class="fu">c</span>(<span class="st">&quot;%d/%m/%y&quot;</span>))</span>
-<span id="cb87-3"><a href="working-with-parameters.html#cb87-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb87-4"><a href="working-with-parameters.html#cb87-4" aria-hidden="true" tabindex="-1"></a><span class="co"># filter by country, year an month</span></span>
-<span id="cb87-5"><a href="working-with-parameters.html#cb87-5" aria-hidden="true" tabindex="-1"></a>country_filter <span class="ot">&lt;-</span> covid_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(countriesAndTerritories <span class="sc">==</span> params<span class="sc">$</span>country <span class="sc">&amp;</span> year <span class="sc">==</span> params<span class="sc">$</span>year <span class="sc">&amp;</span> month <span class="sc">%in%</span> (params<span class="sc">$</span>firstmonth<span class="sc">:</span>params<span class="sc">$</span>lastmonth))</span>
-<span id="cb87-6"><a href="working-with-parameters.html#cb87-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb87-7"><a href="working-with-parameters.html#cb87-7" aria-hidden="true" tabindex="-1"></a><span class="co"># make a line graph based on the filter output</span></span>
-<span id="cb87-8"><a href="working-with-parameters.html#cb87-8" aria-hidden="true" tabindex="-1"></a>country_filter <span class="sc">%&gt;%</span></span>
-<span id="cb87-9"><a href="working-with-parameters.html#cb87-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> dateRep, <span class="at">y =</span> cases)) <span class="sc">+</span></span>
-<span id="cb87-10"><a href="working-with-parameters.html#cb87-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
-<span id="cb87-11"><a href="working-with-parameters.html#cb87-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb87-12"><a href="working-with-parameters.html#cb87-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Covid cases from&quot;</span>,params<span class="sc">$</span>country, <span class="st">&quot;in&quot;</span>, params<span class="sc">$</span>year),</span>
-<span id="cb87-13"><a href="working-with-parameters.html#cb87-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Date&quot;</span></span>
-<span id="cb87-14"><a href="working-with-parameters.html#cb87-14" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="working-with-parameters.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter by year and continent and sum the amount of deaths per country</span></span>
-<span id="cb88-2"><a href="working-with-parameters.html#cb88-2" aria-hidden="true" tabindex="-1"></a>country_deaths <span class="ot">&lt;-</span> covid_data <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(countriesAndTerritories) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> params<span class="sc">$</span>year, continentExp <span class="sc">==</span> params<span class="sc">$</span>continent) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">deaths =</span> <span class="fu">sum</span>(deaths, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb88-3"><a href="working-with-parameters.html#cb88-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb88-4"><a href="working-with-parameters.html#cb88-4" aria-hidden="true" tabindex="-1"></a><span class="co"># make a bar graph based on the filter output</span></span>
-<span id="cb88-5"><a href="working-with-parameters.html#cb88-5" aria-hidden="true" tabindex="-1"></a>country_deaths <span class="sc">%&gt;%</span> </span>
-<span id="cb88-6"><a href="working-with-parameters.html#cb88-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> countriesAndTerritories, <span class="at">y =</span> deaths)) <span class="sc">+</span></span>
-<span id="cb88-7"><a href="working-with-parameters.html#cb88-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
-<span id="cb88-8"><a href="working-with-parameters.html#cb88-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="sc">+</span></span>
-<span id="cb88-9"><a href="working-with-parameters.html#cb88-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb88-10"><a href="working-with-parameters.html#cb88-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;covid related deaths per country in&quot;</span>, params<span class="sc">$</span>continent, <span class="st">&quot;in&quot;</span>, params<span class="sc">$</span>year),</span>
-<span id="cb88-11"><a href="working-with-parameters.html#cb88-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;countries&quot;</span></span>
-<span id="cb88-12"><a href="working-with-parameters.html#cb88-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<div class="csl-entry">
+Sathyanesan, Aaron, and Vittorio Gallo. 2019. <span>“Cerebellar Contribution to Locomotor Behavior: <span>A</span> Neurodevelopmental Perspective.”</span> <em>Neurobiology of Learning and Memory</em> 165 (November): 106861. <a href="https://doi.org/10.1016/j.nlm.2018.04.016">https://doi.org/10.1016/j.nlm.2018.04.016</a>.
+</div>
+<div class="csl-entry">
+Vaart, T. van der, G. M. van Woerden, Y. Elgersma, C. I. de Zeeuw, and M. Schonewille. 2011. <span>“Motor Deficits in Neurofibromatosis Type 1 Mice: The Role of the Cerebellum.”</span> <em>Genes, Brain, and Behavior</em> 10 (4): 404–9. <a href="https://doi.org/10.1111/j.1601-183X.2011.00685.x">https://doi.org/10.1111/j.1601-183X.2011.00685.x</a>.
+</div>
+<div class="csl-entry">
+Vinueza Veloz, María Fernanda, Kuikui Zhou, Laurens W. J. Bosman, Jan-Willem Potters, Mario Negrello, Robert M. Seepers, Christos Strydis, Sebastiaan K. E. Koekkoek, and Chris I. De Zeeuw. 2015. <span>“Cerebellar Control of Gait and Interlimb Coordination.”</span> <em>Brain Structure &amp; Function</em> 220 (6): 3513–36. <a href="https://doi.org/10.1007/s00429-014-0870-1">https://doi.org/10.1007/s00429-014-0870-1</a>.
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="package-creation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="working-with-parameters.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

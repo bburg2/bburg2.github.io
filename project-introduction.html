@@ -126,6 +126,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="darkdown.css" type="text/css" />
 </head>
@@ -140,7 +162,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="about-me.html"><a href="about-me.html"><i class="fa fa-check"></i><b>1</b> About me</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About me</a></li>
 <li class="chapter" data-level="2" data-path="resume.html"><a href="resume.html"><i class="fa fa-check"></i><b>2</b> Resume</a></li>
 <li class="chapter" data-level="3" data-path="project-introduction.html"><a href="project-introduction.html"><i class="fa fa-check"></i><b>3</b> Project Introduction</a>
 <ul>
@@ -173,6 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2" data-path="package-creation.html"><a href="package-creation.html#installation"><i class="fa fa-check"></i><b>9.2</b> installation</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="working-with-parameters.html"><a href="working-with-parameters.html"><i class="fa fa-check"></i><b>10</b> Working with parameters</a></li>
+<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
 </ul>
 
       </nav>
@@ -198,14 +221,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="about-the-project" class="section level3 hasAnchor" number="3.0.2">
 <h3><span class="header-section-number">3.0.2</span> about the project<a href="project-introduction.html#about-the-project" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The project is about the erasmusladder, this is a device made for testing motor function of mice. The device does this by having sensors in every step the mice can possibly take. After the mouse walks across one of these erasmusladders data is provided by the erasmusladder. This data set cointains 120 variables, these variables are about every step a mouse can take, for example there are nine different high to low variables, these are the steps the programs sees as a misstep. The erasmusladder is usefull for testing mice under different conditions. For example one study looked at the difference between wilt-type mice and mice with degenerating purkinje cells <span class="citation">[@vinuezavelozCerebellarControlGait2015 ]</span>. The erasmusladder also contains two different air outlets to control the moment of departure and the speed of the mice. The erasmusladder also has 2 x 37 sensors on each side of the erasmusladder wich makes is possible to output the data. The device makes a prediction if the mouse is walking at a consistant speed. If a prediction is made it will be possible to put one of the sensors down right before the mouse is there, because of this the mouse has to change his path in an instant. In some mutated mice this will not work because of a small defect in the cerebellum<span class="citation">[@vandervaartMotorDeficitsNeurofibromatosis2011]</span>.</p>
-<p>When a mouse first gets into an erasmusladder it is loaded within a box with a light signal and an airduct, there is only one way to go for the mouse which is the erasmusladder. The trail starts when there is a light signal after this the airduct starts blowing air to the other side of the erasmusladder, because of this the mouse will start to move. When the mouse moves from one box to the next box this is called a trial. After the mouse gets in the other box which is on the other side another light and air que will start after 10 to 20 seconds and the mouse has to go back. One session will take 42 trials for the mouse to be done. The erasmusladder also makes it possible to make your own protocol<span class="citation">[@sathyanesanCerebellarContributionLocomotor2019]</span>.</p>
-<p>One study which used the erasmusladder studied the cerebellum which plays an important role in motor learning. The study used control mice on the erasmus ladder and ßCamKII knockout mice. The study found that mice with a ßCamKII deficit have a motor performence an a motor learning deficit. This study used this data to prove that the erasmusladder works as intended an made the erasmusladder because there was no good technology to study motor performance in mice. Previous methods included grid walking, rope climbing, incline plane kimatic analysis, open-field tasks, gait analysis, measures of ground reaction forces, swimming and acceleration rotarod<span class="citation">[@cupidoDetectingCerebellarPhenotypes]</span>.</p>
+<p>The project is about the erasmusladder, this is a device made for testing motor function of mice. The device does this by having sensors in every step the mice can possibly take. After the mouse walks across one of these erasmusladders data is provided by the erasmusladder. This data set cointains 120 variables, these variables are about every step a mouse can take, for example there are nine different high to low variables, these are the steps the programs sees as a misstep. The erasmusladder is usefull for testing mice under different conditions. For example one study looked at the difference between wilt-type mice and mice with degenerating purkinje cells <span class="citation">(Vinueza Veloz et al. 2015 )</span>. The erasmusladder also contains two different air outlets to control the moment of departure and the speed of the mice. The erasmusladder also has 2 x 37 sensors on each side of the erasmusladder wich makes is possible to output the data. The device makes a prediction if the mouse is walking at a consistant speed. If a prediction is made it will be possible to put one of the sensors down right before the mouse is there, because of this the mouse has to change his path in an instant. In some mutated mice this will not work because of a small defect in the cerebellum<span class="citation">(van der Vaart et al. 2011)</span>.</p>
+<p>When a mouse first gets into an erasmusladder it is loaded within a box with a light signal and an airduct, there is only one way to go for the mouse which is the erasmusladder. The trail starts when there is a light signal after this the airduct starts blowing air to the other side of the erasmusladder, because of this the mouse will start to move. When the mouse moves from one box to the next box this is called a trial. After the mouse gets in the other box which is on the other side another light and air que will start after 10 to 20 seconds and the mouse has to go back. One session will take 42 trials for the mouse to be done. The erasmusladder also makes it possible to make your own protocol<span class="citation">(Sathyanesan and Gallo 2019)</span>.</p>
+<p>One study which used the erasmusladder studied the cerebellum which plays an important role in motor learning. The study used control mice on the erasmus ladder and ßCamKII knockout mice. The study found that mice with a ßCamKII deficit have a motor performence an a motor learning deficit. This study used this data to prove that the erasmusladder works as intended an made the erasmusladder because there was no good technology to study motor performance in mice. Previous methods included grid walking, rope climbing, incline plane kimatic analysis, open-field tasks, gait analysis, measures of ground reaction forces, swimming and acceleration rotarod<span class="citation">(Cupido, n.d.)</span>.</p>
 <p>The goal of this project is to make it easier for research to look at the data by using rmarkdown and shinyAPP to make a lot of different graphs. With shinyAPP it is possible to change which graph you want to see, and because the graphs are writen in functions it is also easy to change which aspect you want to see of the graph. To reach to goal of the project our group started working with the agile workflow which consist of sprint of two weeks. Our project group also has a scrum board where we can look what tasks we are doing to get the best possible result for the project.</p>
 </div>
 <div id="bibliography" class="section level3 hasAnchor" number="3.0.3">
 <h3><span class="header-section-number">3.0.3</span> Bibliography<a href="project-introduction.html#bibliography" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><span class="citation">@cupidoDetectingCerebellarPhenotypes</span>; <span class="citation">@sathyanesanCerebellarContributionLocomotor2019</span>; <span class="citation">@vandervaartMotorDeficitsNeurofibromatosis2011</span>; <span class="citation">@vinuezavelozCerebellarControlGait2015</span></p>
+<p><span class="citation">Cupido (n.d.)</span>; <span class="citation">Sathyanesan and Gallo (2019)</span>; <span class="citation">van der Vaart et al. (2011)</span>; <span class="citation">Vinueza Veloz et al. (2015)</span></p>
 
 </div>
 </div>
